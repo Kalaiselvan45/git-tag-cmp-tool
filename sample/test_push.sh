@@ -1,6 +1,5 @@
 #!/bin/bash
 set -e
-git reset
 git add .
 git commit -m "testing" || true
 
