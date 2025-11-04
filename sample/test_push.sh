@@ -10,6 +10,6 @@ git status
 if ! git push; then
   echo "Push failed — pulling updates and rebasing..."
   git fetch origin
-  git rebase origin/main   # <--- Correct branch name
+  git rebase origin/main
   git push
 fi
