@@ -1,10 +1,15 @@
 #!/bin/bash
 set -e
+git reset
 git add .
-git commit -m "testing"
+git commit -m "testing" || true
+
 git status
+
+# Try normal push first
 if ! git push; then
+  echo "Push failed — pulling updates and rebasing..."
   git fetch origin
-  git rebase origin/master
+  git rebase origin/main   # <--- Correct branch name
   git push
 fi
